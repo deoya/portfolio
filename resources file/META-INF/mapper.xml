@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 웹전용  // 어플리케이션에서 안됨  -->
+<mapper namespace="NoticeDB">
+
+	<insert id="admin_notice_insert">
+		insert into admin_notice values('0',#{nimportant},#{ntitle},#{aname},#{nfile},#{ncontent},'0',now())
+	</insert>
+	
+	
+	<select id="admin_notice_select" resultType="Notice"> <!-- 전체글 불러오기 -->
+		select * from admin_notice order by nidx desc
+	</select>
+	<select id="admin_noticeOne_select" parameterType="String" resultType="Notice"> <!-- 글 view 불러오기 -->
+		select * from admin_notice where nidx= #{nidx}
+	</select>
+	
+	<update id="admin_notice_updateFileNone">
+		update admin_notice set nimportant = #{nimportant} ,ntitle = #{ntitle}, ncontent = #{ncontent}, ndate = now() where nidx = #{nidx}
+	</update>
+	<update id="admin_notice_updateFileYes">
+		update admin_notice set nimportant = #{nimportant} ,ntitle = #{ntitle}, nfile = ${nfile}, ncontent = #{ncontent}, ndate = now() where nidx = #{nidx}
+	</update>
+	
+	
+</mapper>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="HomepgDB">
+	<select id="homepg_info_selectOne" resultType="Integer"> 
+		select count(*) as cnt from homepg_info;
+	</select>
+	<select id="homepg_info_select" parameterType="String" resultType="Homepg"> 
+		select * from homepg_info;
+	</select>
+	
+	<insert id="homepg_info_insert">
+		insert into homepg_info
+		values(#{hdomain},#{hadmin_email},#{hpoint_use},#{hpoint},#{hlevel}, #{hcompany},#{hcompany_num},#{hceo},#{hceo_hp},#{hreport_num},#{hprovide_num},#{hpost_code},#{haddr},#{hinfo_officer},#{hinfo_email},#{hbank},#{hbank_num},#{hpay_card},#{hpay_phone},#{hpay_book},#{hpay_min_point},#{hpay_max_point},#{hcash_receipt})
+	</insert>
+	
+	<delete id="homepg_info_update">
+		delete from homepg_info
+	</delete>
+</mapper>
