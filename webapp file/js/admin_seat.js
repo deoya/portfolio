@@ -79,13 +79,16 @@ var html = new Vue({
 				}
 				i++;
 			}
+	
+			
 			
 			f2.pidx.value = this.idx
 			f2.rstart_date.value = this.start
 			f2.rend_date.value = this.end
 			f2.rprice.value = this.pr
 			
-	
+		
+			
 			if(this.result.indexOf(false) > -1){
 				alert("예약 종료일 보다 예약 시작일이 클 수 없습니다")
 			}
@@ -93,10 +96,14 @@ var html = new Vue({
 				alert("등록할 항공코드의 예약정보가 있다면 빈칸을 채워주세요");
 			}
 			else {
-				f2.action="./admin_seat_ok.do"
-				f2.method="post"
-				f2.enctype="application/x-www-form-urlencoded"
-				f2.submit()
+				if(f2.rstart_date.value == "" && f2.rend_date.value == "" &&f2.rprice.value == ""){
+					alert("등록할 데이터를 입력하세요")
+				}else {
+					f2.action="./admin_seat_ok.do"
+					f2.method="post"
+					f2.enctype="application/x-www-form-urlencoded"
+					f2.submit()
+				}
 			}
 		}
 	}

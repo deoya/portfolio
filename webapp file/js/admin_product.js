@@ -40,8 +40,13 @@ var html = new Vue({
 			}
 		},
 		delete_list:function(){
-			if(confirm('해당 항공편들을 삭제 하시겠습니까?')){
-				location.href="./admin_product_deleteAll.do?pidx="+this.a;
+			if(this.a.length == 0){
+				alert('삭제할 게시글을 선택해주세요')
+			}
+			else {
+				if(confirm('해당 항공편들을 삭제 하시겠습니까?')){
+					location.href="./admin_product_deleteAll.do?pidx="+this.a;
+				}
 			}
 		},
 		right:function(ea){

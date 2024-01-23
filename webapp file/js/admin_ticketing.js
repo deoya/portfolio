@@ -1,5 +1,3 @@
-
-
 var html = new Vue({
 	el : "#vue",
 	data : {
@@ -9,12 +7,16 @@ var html = new Vue({
 	},
 	methods:{
 		del_reserve:function(){
-			if(confirm('해당 고객의 예매를 취소 시키겠습니까?')){
-				location.href="./admin_reserve_delete.do?uidx="+this.ch_del;
+			if(this.ch_del == ""){
+				alert("취소시킬 데이터를 선택해 주세요")
+			}
+			else {
+				if(confirm('해당 고객의 예매를 취소 시키겠습니까?')){
+					location.href="./admin_reserve_delete.do?uidx="+this.ch_del;
+				}
 			}
 		},
 		goSearch:function(){
-			
 			f.action="./admin_ticketing.do"
 			f.method="post"
 			f.enctype="application/x-www-form-urlencoded"
