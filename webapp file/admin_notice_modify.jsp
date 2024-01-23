@@ -92,7 +92,7 @@ ${ot}
 	        </ul>
 	        </div>
 	        <div class="board_btn">
-	            <button class="border_list">공지목록</button>
+	            <button class="border_list" type="button"  onclick="location.href='./admin_notice.do'" >공지목록</button>
 	            <button class="border_modify" type="button" @click="go_update">공지수정 완료</button>
 	        </div>
 	    </form>
