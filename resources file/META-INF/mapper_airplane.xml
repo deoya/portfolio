@@ -26,7 +26,7 @@
 	</select>
 	<!-- 전체 항공 코드 출력 -->
 	<select id="select_air_category_all" resultType="Airplane">
-		select * from  air_code
+		select * from  air_code  order by aidx desc
 	</select>
 	<!-- 중복 제외 : 전체 항공코드 출력 -->
 	<select id="select_air_category" resultType="Airplane">
@@ -113,7 +113,7 @@
 	</select>
 	<!-- 미설정 좌석 추출 -->
 	<select id="select_air_seat_none_reserve" resultType="Airplane">
-		select * from v_air_plane_list where air_resuerve_ck = 'N'
+		select * from v_air_plane_list where air_resuerve_ck = 'N' order by pidx desc
 	</select>
 	<!-- 예매 설정 완료 좌석 추출 -->
 	<select id="select_air_seat_yes_reserve" resultType="Airplane">
