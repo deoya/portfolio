@@ -17,14 +17,7 @@
 	<select id="admin_notice_pg_select" parameterType="Integer" resultType="Notice">
 		select * from admin_notice order by nidx desc limit #{pg},3	
 	</select>
-	
-	 <!--  게시글 전체 삭제를 위한 파일 정보만 불러오기
-	 select nfile from admin_notice where FIND_IN_SET(nidx, #{nidx})
-	 
-	 	delete from admin_notice where FIND_IN_SET(nidx, #{nidx})
-	 and nfile !=''
-	 
-	 --> 
+
 	<select id="admin_notice_file_list" parameterType="map" resultType="Notice">
 	 	select nidx,nfile from admin_notice where nidx in
 	 	<foreach item="nidx" collection="datas" open="(" separator="," close=")">
