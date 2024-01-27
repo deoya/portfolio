@@ -35,6 +35,7 @@
 	    <p>좌석 및 예약설정</p>
 	<div class="subpage_view">
 	    <span><b @click="nonereserve">미설정 항공코드 ${nonelist.size()}건</b> | <span @click="ysereserve" style="display:inline;">설정 완료 항공코드 ${yeslist.size()}건</span></span>
+	    <em style="color:gray;">&nbsp&nbsp&nbsp&nbsp ↑ 클릭시 원하는 데이터 목록이 표시 됩니다</em>    
 	    <span>
 	        <form id="f">
 	      		<input type="hidden" name="air_resuerve_ck">
