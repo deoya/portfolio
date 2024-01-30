@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="MainDB">
+<select id="select_air_plane" resultType="Main">
+	select * from v_air_reserve_list
+</select>
+<select id="select_start_point" resultType="String">
+	select distinct start_point from v_air_reserve_list
+</select>
+<select id="select_end_point" resultType="String">
+	select distinct end_point from v_air_reserve_list where start_point = #{spoint}
+</select>
+<select id="select_seat_form" resultType="String">
+	select distinct seat_form from v_air_reserve_list where start_point = #{start_point} and end_point = #{end_point}
+</select>
+<insert id="insert_user_reserve">
+	insert into user_reserve values('0',#{start_point},#{end_point},#{ustart},#{uend},#{seat_form},#{promotion},#{ucount},#{uname},#{utel},now())
+</insert>
+</mapper>
