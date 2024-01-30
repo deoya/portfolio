@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<typeAliases> 
+		<typeAlias alias="Notice" type="notice.notice_dao"/>
+		<typeAlias alias="Homepg" type="home.homepg_info_dao"/>
+		<typeAlias alias="Airplane" type="airplane.airplane_dao"/>
+		<typeAlias alias="Faq" type="faq.faq_dao"/>
+	</typeAliases>
+</configuration>
+
+
+
